@@ -1,0 +1,4 @@
+FROM docker.io/node:22
+
+RUN npm install -g npm@latest
+
