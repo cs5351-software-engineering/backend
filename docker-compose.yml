@@ -31,11 +31,14 @@ services:
       - TYPEORM_MIGRATIONS=${TYPEORM_MIGRATIONS}
       - TYPEORM_MIGRATIONS_DIR=${TYPEORM_MIGRATIONS_DIR}
 
+      - DATABASE_URL=postgresql://postgres:admin@postgres_database:5432/code-analysis?schema=public
+
       - DB_DATABASE=code-analysis
-      - DB_HOST=postgres_database
-      - DB_PASSWORD=admin
-      - DB_PORT=5432
       - DB_USERNAME=postgres
+      - DB_PASSWORD=admin
+      - DB_HOST=postgres_database
+      - DB_PORT=5432
+
     ports:
       - "3000:3000"
 
