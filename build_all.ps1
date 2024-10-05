@@ -1,3 +1,6 @@
+# Store the current directory in a variable
+$currentDir = Get-Location
+
 # Build develop image
 Write-Host "Building backend develop image..."
 Set-Location .\backend
@@ -22,3 +25,6 @@ if ($LASTEXITCODE -eq 0) {
 }
 
 Write-Host "`nBoth images have been built successfully." -ForegroundColor Green
+
+# Return to the original directory
+Set-Location $currentDir
